@@ -1,26 +1,148 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* Same design tokens as the tailwind.config in the original HTML (Tailwind v4 = config lives in CSS). */
+@theme {
+  --color-primary: #050816;
+  --color-secondary: #aaa6c3;
+  --color-tertiary: #151030;
+  --color-black-100: #100d25;
+  --color-white-100: #f3f3f3;
+  --color-accent: #915EFF;
+
+  --breakpoint-xs: 450px;
+
+  /* Tailwind v4 changed its default palette. These are the v3 values the original
+     page rendered with, so gradients and the footer text look exactly the same. */
+  --color-pink-300: #f9a8d4;
+  --color-purple-500: #a855f7;
+  --color-slate-500: #64748b;
+  --color-gray-500: #6b7280;
+  --color-emerald-500: #10b981;
+  --color-green-500: #22c55e;
+  --color-pink-500: #ec4899;
+  --color-amber-500: #f59e0b;
+  --color-cyan-500: #06b6d4;
+  --color-violet-500: #8b5cf6;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* Tailwind v4's preflight no longer gives buttons a pointer cursor (v3 did). */
+@layer base {
+  button,
+  [role="button"] {
+    cursor: pointer;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* Custom styles copied verbatim from the original HTML.
+   They sit in the `components` layer so Tailwind utilities still win ties,
+   exactly like in the original page (where the Tailwind styles were injected last). */
+@layer components {
+:root { color-scheme: dark; box-sizing: border-box; padding-top: env(safe-area-inset-top,0px); padding-bottom: env(safe-area-inset-bottom,0px); }
+html { scroll-padding-top: 90px; }
+body { font-family:var(--font-poppins),'Poppins',sans-serif; background:#050816; color:#fff; }
+.violet-gradient { background:linear-gradient(90deg,#804dee 0%,rgba(60,51,80,0) 100%); background:linear-gradient(-90deg,#804dee,rgba(60,51,80,0)); }
+.vline { background:linear-gradient(180deg,#915EFF,rgba(60,51,80,0)); }
+.hero-bg { position:relative; overflow:hidden;
+  background:
+    radial-gradient(ellipse 55% 60% at 2% 105%, rgba(168,24,170,.75) 0%, rgba(98,22,150,.45) 38%, transparent 72%),
+    radial-gradient(ellipse 45% 45% at 0% 62%, rgba(110,56,235,.28) 0%, transparent 70%),
+    radial-gradient(ellipse 50% 40% at 18% 12%, rgba(44,36,170,.42) 0%, transparent 70%),
+    radial-gradient(ellipse 40% 50% at 100% 100%, rgba(40,20,90,.35) 0%, transparent 70%),
+    linear-gradient(180deg,#06061c 0%,#0b0a2c 28%,#050816 100%); }
+.hero-bg::after { content:''; position:absolute; inset:auto 0 0 0; height:120px; background:linear-gradient(180deg,transparent,#050816); pointer-events:none; }
+.name-glow { text-shadow:0 0 40px rgba(145,94,255,.55); }
+.photo-glow { box-shadow:0 0 0 1px rgba(255,255,255,.12), 0 25px 80px -10px rgba(145,94,255,.45), 0 0 120px rgba(168,24,170,.25); }
+.stars { background-image:radial-gradient(1px 1px at 20px 30px,#fff,transparent),radial-gradient(1px 1px at 120px 80px,#aaa6c3,transparent),radial-gradient(1.5px 1.5px at 200px 160px,#fff,transparent),radial-gradient(1px 1px at 60px 190px,#aaa6c3,transparent); background-size:240px 240px; opacity:.35; }
+.reveal { opacity:0; transform:translateY(24px); transition:opacity .7s ease, transform .7s ease; }
+.reveal.in { opacity:1; transform:none; }
+@media (prefers-reduced-motion:reduce){ .reveal{opacity:1;transform:none;transition:none} }
+.glow-orange{background:linear-gradient(90deg,#f12711,#f5af19);-webkit-background-clip:text;background-clip:text;color:transparent}
+.glow-green{background:linear-gradient(90deg,#11998e,#38ef7d);-webkit-background-clip:text;background-clip:text;color:transparent}
+.glow-blue{background:linear-gradient(90deg,#007cf0,#00dfd8);-webkit-background-clip:text;background-clip:text;color:transparent}
+
+/* ---- Vertical timeline (two columns, bounce-in) ---- */
+.vertical-timeline{--line-color:#FFF;position:relative;width:100%;max-width:1170px;margin:0 auto;padding:2em 0}
+.vertical-timeline::before{content:'';position:absolute;top:0;left:18px;height:100%;width:4px;background:var(--line-color)}
+.vertical-timeline-element{position:relative;margin:2em 0;display:flow-root}
+.vertical-timeline-element::after{content:'';display:table;clear:both}
+.vertical-timeline-element:first-child{margin-top:0}
+.vertical-timeline-element:last-child{margin-bottom:0}
+.vertical-timeline-element-icon{position:absolute;top:0;left:0;width:40px;height:40px;border-radius:50%;box-shadow:0 0 0 4px #fff,inset 0 2px 0 rgba(0,0,0,.08),0 3px 0 4px rgba(0,0,0,.05);display:flex;align-items:center;justify-content:center;z-index:1}
+.vertical-timeline-element-content{position:relative;margin-left:60px;border-radius:.25em;padding:1em;box-shadow:0 3px 0 #ddd}
+.vertical-timeline-element-content::after{content:"";display:table;clear:both}
+.vertical-timeline-element-content-arrow{position:absolute;top:16px;right:100%;height:0;width:0;border:7px solid transparent}
+.vertical-timeline-element-date{display:block;float:left;padding:.8em 0;opacity:.7;font-size:16px;font-weight:500}
+.vtl-hidden{visibility:hidden}
+.is-visible .vertical-timeline-element-icon{animation:vtl-bounce-1 .6s}
+.is-visible .vertical-timeline-element-content{animation:vtl-bounce-2 .6s}
+@keyframes vtl-bounce-1{0%{opacity:0;transform:scale(.5)}60%{opacity:1;transform:scale(1.2)}100%{transform:scale(1)}}
+@keyframes vtl-bounce-2{0%{opacity:0;transform:translateX(-100px)}60%{opacity:1;transform:translateX(20px)}100%{transform:translateX(0)}}
+@keyframes vtl-bounce-2-inverse{0%{opacity:0;transform:translateX(100px)}60%{opacity:1;transform:translateX(-20px)}100%{transform:translateX(0)}}
+@media (min-width:1170px){
+  .vertical-timeline::before{left:50%;margin-left:-2px}
+  .vertical-timeline-element-icon{width:60px;height:60px;left:50%;margin-left:-30px}
+  .vertical-timeline-element-content{margin-left:0;padding:1.5em;width:45%}
+  .vertical-timeline-element-content-arrow{left:100%;right:auto;border-right-color:transparent!important;border-left:7px solid #1d1836}
+  .vertical-timeline-element-date{position:absolute;width:100%;left:124%;top:6px;float:none;padding:0}
+  .vertical-timeline-element:nth-child(even) .vertical-timeline-element-content{float:right}
+  .vertical-timeline-element:nth-child(even) .vertical-timeline-element-content-arrow{left:auto;right:100%;border-left-color:transparent;border-right:7px solid #1d1836!important}
+  .vertical-timeline-element:nth-child(even) .vertical-timeline-element-date{left:auto;right:124%;text-align:right}
+  .vertical-timeline-element:nth-child(even).is-visible .vertical-timeline-element-content{animation:vtl-bounce-2-inverse .6s}
+}
+@media (prefers-reduced-motion:reduce){.is-visible .vertical-timeline-element-icon,.is-visible .vertical-timeline-element-content{animation:none}}
+
+/* Technology chips */
+.tech-in{display:flex;align-items:center;gap:.5rem;border:4px solid #262626;border-radius:1rem;padding:.5rem .75rem;background:rgba(255,255,255,.02);animation:tfloat 4.5s ease-in-out infinite;transition:translate .25s ease,border-color .25s ease,box-shadow .25s ease,background .25s ease}
+.tech-in:hover{translate:0 -4px;border-color:var(--c);box-shadow:0 8px 24px -8px var(--c);background:rgba(255,255,255,.05)}
+.tech-dot{width:.75rem;height:.75rem;border-radius:9999px;background:var(--c);transition:transform .25s ease,box-shadow .25s ease}
+.tech-in:hover .tech-dot{transform:scale(1.35);box-shadow:0 0 10px var(--c)}
+@keyframes tfloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-3px)}}
+@media (prefers-reduced-motion:reduce){.tech-in{animation:none}}
+
+/* Projects slider */
+#projTrack{--v:3;transition:transform .8s cubic-bezier(.65,0,.35,1);will-change:transform}
+.proj-card{flex:0 0 calc((100% - (var(--v) - 1) * 28px) / var(--v));min-width:0}
+#projTrack.dragging{transition:none}
+.proj-dot{height:8px;width:8px;border-radius:9999px;background:#3a3558;transition:width .4s ease,background .4s ease}
+.proj-dot.active{width:28px;background:#915EFF}
+@media (prefers-reduced-motion:reduce){#projTrack{transition:none}}
+
+/* fade-in used by the section and chips */
+.reveal { opacity:0; transform:translateY(24px); transition:opacity .7s ease, transform .7s ease; }
+.reveal.in { opacity:1; transform:none; }
+
+/* technology chips */
+.tech-in{display:flex;align-items:center;gap:.5rem;border:4px solid #262626;border-radius:1rem;padding:.5rem .75rem;background:rgba(255,255,255,.02);animation:tfloat 4.5s ease-in-out infinite;transition:translate .25s ease,border-color .25s ease,box-shadow .25s ease,background .25s ease}
+.tech-in:hover{translate:0 -4px;border-color:var(--c);box-shadow:0 8px 24px -8px var(--c);background:rgba(255,255,255,.05)}
+.tech-ico{width:1.4rem;height:1.4rem;flex:none;color:var(--c);transition:transform .3s ease,filter .3s ease}
+.tech-in:hover .tech-ico{transform:scale(1.2) rotate(-6deg);filter:drop-shadow(0 0 6px var(--c))}
+@keyframes tfloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-3px)}}
+@media (prefers-reduced-motion:reduce){
+  .reveal{opacity:1;transform:none;transition:none}
+  .tech-in{animation:none}
+}
+
+/* hero photo hover */
+.hero-photo { perspective: 1000px; }
+.hero-photo-glow {
+position: absolute; inset: -4%; z-index: 0; border-radius: 1.5rem;
+background: linear-gradient(135deg, #915EFF, #a818aa, #2c24aa);
+filter: blur(40px); opacity: 0; transform: scale(.9);
+transition: opacity .5s ease, transform .5s ease;
+}
+.hero-photo-img {
+position: relative; z-index: 1;
+box-shadow: 0 0 0 1px rgba(255,255,255,.1);
+transition: transform .5s cubic-bezier(.2,.8,.2,1), box-shadow .5s ease, filter .5s ease;
+}
+.hero-photo:hover .hero-photo-glow { opacity: .55; transform: scale(1); }
+.hero-photo:hover .hero-photo-img {
+transform: translateY(-10px) rotateX(3deg) rotateY(-4deg) scale(1.03);
+box-shadow: 0 0 0 1px rgba(255,255,255,.25), 0 30px 60px -15px rgba(0,0,0,.6);
+filter: saturate(1.1) brightness(1.04);
+}
+@media (prefers-reduced-motion: reduce) {
+.hero-photo-glow, .hero-photo-img { transition: none; }
+.hero-photo:hover .hero-photo-img { transform: none; }
+}
 }
