@@ -46,7 +46,7 @@ export const projects: Project[] = [
   },
   {
     title: 'Wellesley Cafe - EPOS',
-    cover: { image: '/wellesley-cafe.png', alt: 'Wellesley Cafe - EPOS' },
+    cover: { image: '/images/wellesley-cafe.png', alt: 'Wellesley Cafe - EPOS' },
     links: [
       { type: 'github', href: 'https://github.com/gavin-waako/cafe-pos-system' },
       { type: 'live', href: '#' },

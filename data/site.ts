@@ -2,7 +2,7 @@
 export const site = {
   name: 'Gavin Waako',
   initials: 'GW',
-  email: 'g_waako@massbay.edu', // contact form opens the visitor's mail app addressed to this
+  email: 'g_waako@massbay.edu', 
   year: 2026,
 };
 
@@ -13,4 +13,4 @@ export const socialLinks = [
   { id: 'medium', label: 'Medium', href: 'https://medium.com/@gavinwaako' },
 ];
 
-export const resumeHref = '/resume.pdf'; // put resume.pdf in /public
+export const resumeHref = '/files/resume.pdf';

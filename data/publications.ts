@@ -14,9 +14,9 @@ export const publications: Publication[] = [
   //   href: '#',
   // },
   {
-    title: 'From Paper to Digital: A Java-Based Order Management System for a Local Cafe',
-    venue: 'Class Project, CS200 Programming I. Prepared for Wellesley Cafe (May 2026)',
-    authors: 'Gavin G Waako',
-    href: '#',
+    title: 'A Java-Based Order Management System for a Local Cafe',
+    venue: 'Class Project, CS200 Programming II. Prepared for Wellesley Cafe (May 2026)',
+    authors: 'Gavin G. Waako',
+    href: '/papers/cs200-java-system.pdf',
   },
 ];
