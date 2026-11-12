@@ -5,7 +5,7 @@ import { publications } from '../../data/publications';
 export default function Publications() {
   return (
     <section id="publications" className="relative mx-auto max-w-7xl px-6 py-8 sm:px-16 sm:py-12">
-      <SectionHeading eyebrow="Research" title="Publications." size="sm" />
+      <SectionHeading eyebrow="Technical" title="Writings." size="sm" />
       <ul className="mt-8 divide-y divide-white/10 rounded-2xl border border-white/5 bg-tertiary">
         {publications.map((pub) => (
           <Reveal as="li" key={pub.title} style={{ transitionDelay: '80ms' }}>
