@@ -14,6 +14,6 @@ export const navLinks: NavLink[] = [
   { href: '#tech', label: 'Skills', desktopClass: normal },
   { href: '#projects', label: 'Projects', desktopClass: normal },
   { href: '#education', label: 'Education', desktopClass: 'text-[16px] font-medium text-secondary' },
-  { href: '#publications', label: 'Publications', desktopClass: normal },
+  { href: '#writings', label: 'Technical Writings', desktopClass: normal },
   { href: '#contact', label: 'Contact', desktopClass: normal },
 ];
