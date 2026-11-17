@@ -13,7 +13,6 @@ export default function Certifications() {
             as="a"
             key={cert.name}
             href={cert.href}
-            target="_blank"
             rel="noopener noreferrer"
             className="group flex items-start gap-4 rounded-2xl border border-white/5 bg-tertiary p-5 transition hover:border-accent/50 hover:bg-white/5"
             style={i > 0 ? { transitionDelay: `${i * 80}ms` } : undefined}
