@@ -26,7 +26,7 @@ export default function SocialLinks() {
         </a>
       ))}
 
-      <a href={resumeHref} download>
+      <a href={resumeHref} target="_blank" rel="noopener noreferrer" aria-label="Download Resume">
         <button
           type="button"
           className="ml-2 inline-flex w-fit items-center gap-2 rounded-xl bg-white px-6 py-2 font-bold text-tertiary shadow-md shadow-primary outline-hidden transition duration-300 hover:scale-110 hover:opacity-80"

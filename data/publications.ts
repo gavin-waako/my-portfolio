@@ -9,8 +9,8 @@ export interface Publication {
 export const publications: Publication[] = [
   {
     title: 'A Java-Based Order Management System for a Local Cafe',
-    venue: 'Class Project, CS200 Programming II. Prepared for Wellesley Cafe (May 2026)',
+    venue: 'Class Project, CS200 Java Programming II. Submitted as Class Assignment (May 2026)',
     authors: 'Gavin G. Waako',
-    href: '/papers/cs200-java-system.pdf',
+    href: '/papers/A_Java_Based_Order_Management_System_for_a_Local_Cafe.pdf',
   },
 ];
