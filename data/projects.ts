@@ -16,7 +16,7 @@ export interface Project {
 export const projects: Project[] = [
   {
     title: 'TouchPointCare',
-    cover: { label: 'TouchPointCare', gradient: 'from-emerald-500/40' },
+    cover: { image: '/images/touch-point-ehr-demo.gif', alt: 'TouchPointCare' },
     links: [
       { type: 'github', href: 'https://github.com/gavin-waako/touch-point-care' },
       { type: 'live', href: '#' },
@@ -31,7 +31,7 @@ export const projects: Project[] = [
   },
   // {
   //   title: "Nana's Closet",
-  //   cover: { label: "Nana's Closet", gradient: 'from-green-500/40' },
+  //   cover: { image: '/images/nanas-closet.png', alt: "Nana's Closet" },
   //   links: [],
   //   description:
   //     'Implemented Face Match and Liveness Check feature, reducing identity fraud by up to 95%. Integrated new features such as SMS, Email and Push Notification functionalities, facilitating 2FA, immediate alerts & timely reminders to users on transactions.',
