@@ -10,8 +10,8 @@ export const education: EducationItem[] = [
     degree: 'A.S. in Computer Science',
     school: 'Massachusetts Bay Community College',
   },
-  // { period: '2028 – 2030', degree: 'B.S. in Computer Science and Mathematics',
-  //   school: 'University of Massachusetts Amherst, Manning College of Information and Computer Sciences (CICS)' },
+  { period: '2018 – 2020', degree: 'B.A. in Theology, Major in Counselling',
+    school: 'African Christian College, Kingdom of Eswatini' },
   // { period: '2031 – 2032', degree: 'M.S. in Computer Science and Mathematics',
   //   school: 'Northeastern University, Khoury College of Computer Science' },
 ];
