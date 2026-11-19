@@ -57,14 +57,14 @@ export const projects: Project[] = [
     ],
   },
   {
-    title: 'InboxWhiz - Chrome Extension',
-    cover: { label: 'InboxWhiz - Chrome Extension', gradient: 'from-pink-500/40' },
+    title: 'ThemeShifter - Chrome Extension',
+    cover: { image: '/images/dark-theme-for-chrome.png', alt: 'ThemeShifter - Chrome Extension' },
     links: [
-      { type: 'github', href: 'https://github.com/gavin-waako/inboxwhiz' },
+      { type: 'github', href: 'https://github.com/gavin-waako/theme-shifter' },
       { type: 'live', href: '#' },
     ],
     description:
-      'InboxWhiz is a Chrome extension that enhances email productivity by providing features such as email tracking, scheduling, and templates. I developed this extension to help users manage their inbox more effectively, and it demonstrates my skills in web development, browser APIs, and user experience design.',
+      'ThemeShifter is a Chrome extension that allows users to easily switch between light and dark themes for their favorite websites. I developed this extension to improve user experience and reduce eye strain, and it demonstrates my skills in web development, browser APIs, and user experience design.',
     tags: [
       { text: 'JavaScript', color: 'blue' },
       { text: 'Chrome Extension', color: 'orange' },
