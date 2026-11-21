@@ -57,14 +57,14 @@ export const projects: Project[] = [
     ],
   },
   {
-    title: 'ThemeShifter - Chrome Extension',
-    cover: { image: '/images/dark-theme-for-chrome.png', alt: 'ThemeShifter - Chrome Extension' },
+    title: 'OfferTrax - Chrome Extension',
+    cover: { image: '/images/dark-theme-for-chrome.png', alt: 'OfferTrax - Chrome Extension' },
     links: [
-      { type: 'github', href: 'https://github.com/gavin-waako/theme-shifter' },
+      { type: 'github', href: 'https://github.com/gavin-waako/offertrax' },
       { type: 'live', href: '#' },
     ],
     description:
-      'ThemeShifter is a Chrome extension that allows users to easily switch between light and dark themes for their favorite websites. I developed this extension to improve user experience and reduce eye strain, and it demonstrates my skills in web development, browser APIs, and user experience design.',
+      'OfferTrax is a Chrome extension to simplify job applications in seconds: parse your resume, autofill forms, and track offers effortlessly.',
     tags: [
       { text: 'JavaScript', color: 'blue' },
       { text: 'Chrome Extension', color: 'orange' },
