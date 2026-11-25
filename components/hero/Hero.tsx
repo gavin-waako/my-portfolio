@@ -21,7 +21,7 @@ export default function Hero() {
               <span className="bg-linear-to-r/srgb from-pink-300 via-slate-500 to-purple-500 bg-clip-text text-xl tracking-tight text-transparent md:text-3xl">
                 resilient, AI-powered cross-platform systems
               </span>{' '}
-              that solve real operational problems. When away from my coding desk, I&apos;m an avid photographer,
+              that solve real user-oriented problems. When away from my coding desk, I&apos;m an avid photographer,
               traveler, and food enthusiast. Feel free to check out my resume.
               <br className="hidden lg:block" />
             </p>
