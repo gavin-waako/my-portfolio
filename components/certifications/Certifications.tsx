@@ -6,7 +6,7 @@ import { certifications } from '../../data/certifications';
 export default function Certifications() {
   return (
     <section id="certifications" className="relative mx-auto max-w-7xl px-6 py-8 sm:px-16 sm:py-12">
-      <SectionHeading eyebrow="Credentials (in progress)" title="Professional Certifications." size="sm" />
+      <SectionHeading eyebrow="Credentials" title="Professional Certifications." size="sm" />
       <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
         {certifications.map((cert, i) => (
           <Reveal

@@ -6,7 +6,6 @@ export interface Certification {
 }
 
 export const certifications: Certification[] = [
-  { name: 'Certified Cloud Practitioner', issuer: 'AWS · 2026', href: '#' },
-  { name: 'Certified AI Practitioner', issuer: 'AWS · 2026', href: '#' },
+  { name: 'Certified Cloud Practitioner', issuer: 'AWS · (Expected Jan. 2026)', href: '#' },
   // { name: 'Certification name', issuer: 'Issuing organization · Year', href: '#' },
 ];
